@@ -1,0 +1,21 @@
+<html>
+<p>sample form</p>
+<form action="/users" method="post">
+name: <input type="text" name="name"><br>
+email: <input type="text" name="email"><br>
+<input type="submit" name="submit">
+</form>
+<table>
+<tr> 
+<th> name </th>
+<th> email </th>
+</tr>
+{% for user in users %}
+<tr>
+<td> {{user.name}} </td>
+<td> {{user.email}} </td>
+<td> <a href="/delete_user?id={{user.id}}&email={{user.email}}">delete</a></td>
+</tr>
+{% endfor %}
+</table>
+</html>
